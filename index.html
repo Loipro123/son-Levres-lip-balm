@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
@@ -292,7 +292,7 @@
 
  .profile-image {
      width: 100%;
-     height: 200px;
+     height: 170px;
      border-top-left-radius: 11px !important;
      border-top-right-radius: 11px
  }
@@ -303,10 +303,77 @@
      text-align: center;
      color:black;
  }
-    </style>
+ /**/
+ body {
+    background-color: #eee
+}
+
+.carousel-inner img {
+    width: 100%
+}
+
+.carousel-item img {
+    width: 320px;
+    height: 240px !important
+}
+
+#myCarousel .carousel-indicators {
+    position: static;
+    margin-top: 20px
+}
+
+#myCarousel .carousel-indicators>li {
+    width: 100%;
+}
+
+#myCarousel .carousel-indicators li img {
+    display: block;
+    opacity: 0.5
+}
+
+#myCarousel .carousel-indicators li.active img {
+    opacity: 1
+}
+
+#myCarousel .carousel-indicators li:hover img {
+    opacity: 0.75
+}
+
+/**/
+.bg-video{position:absolute;top:0;left:0;height:100%;width:100%;z-index:-1;opacity:.8;overflow:hidden}.bg-video__content{height:100%;width:100%;-o-object-fit:cover;object-fit:cover}
+.content {
+  position: fixed;
+  bottom: 0;
+  color: #f1f1f1;
+  width: 100%;
+  padding-bottom: 200px;
+  padding-left: 50px;
+}
+#myBtn {
+  width: 160px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: rgba(249, 249, 250,.3);;
+  color: rgba(7, 7, 7,.7);
+  letter-spacing: 3px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+#myBtn:hover {
+  background: rgba(249, 249, 250,.5);
+  color: rgba(7, 7, 7,.9);}
+#myBtn:focus{
+  outline: none;
+  border:none;
+}
+   </style>
   </head>
   <body>
-  
+    
   <div class="site-wrap">
     
     <div class="site-navbar bg-white py-2" id="myHeader">
@@ -353,20 +420,22 @@
       </div>
     </div>
 
-     <div class="site-blocks-cover" data-aos="fade">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 ml-auto order-md-2 align-self-start">
-            <div class="site-block-cover-content">
-            <h2 class="sub-title" >#New Summer Collection 2019</h2>
-            <h1 style="color: black;">Arrivals Sales</h1>
-            <p><a href="#" class="btn btn-black rounded-0">Shop Now</a></p>
-            </div>
-          </div>
-          <div class="col-md-6 order-1 align-self-end">
-            <img src="images/model_3.png" alt="Image" class="img-fluid">
-          </div>
-        </div>
+     <div class="site-blocks-cover" data-aos="fade" style="padding: 0px;">
+      <!-- <audio autoplay>
+        <source src="images/music.mp3" type="audio/mpeg">
+      </audio> -->
+      <div class="bg-video">
+        <video class="bg-video__content" autoplay muted loop id="myVideo">
+            <source src="images/video (1).mp4" type="video/mp4">
+            <source src="img/video.webm" type="video/webm">
+            Your browser is not supported!
+        </video>
+      </div>
+      <div class="content">
+        <h3 style="font-family: 'Dancing Script', cursive; font-size: 50px;font-weight: 700; color: rgba(249, 249, 250,.3);
+        ">Shunshine <span style="font-size: 18px;text-transform: lowercase;">  on my  </span> Mind</h3>
+        <!-- Use a button to pause/play the video with JavaScript -->
+        <button id="myBtn" onclick="myFunction()">Pause</button>
       </div>
     </div>
 
@@ -426,7 +495,7 @@
     <!---->
     <div class="site-section bg-light">
       <div class="container">
-        <div class="row mb-5 justify-content-center">
+        <div class="row mb-5 justify-content-center" >
           <div class="col-md-6 text-center">
             <h3 class="section-sub-title">Awesome Products</h3>
             <h2 class="section-title mb-3">Featured Products</h2>
@@ -434,17 +503,30 @@
         </div>
         <div class="bg-white py-4 mb-4">
           <div class="row mx-4 my-4 product-item-2 align-items-start">
-            <div class="col-md-6 mb-5 mb-md-0">
-              <img src="images/son1.png" alt="Image" class="img-fluid">
+            <div class="col-md-5 ml-auto mb-md-0">
+              <div id="myCarousel" class="carousel slide" data-ride="carousel" align="center" style="width: 100%;padding: 0px;">
+                <div class="carousel-inner" >
+                     <img src="images/son1.png" class="img-fluid rounded-0 carousel-item active" > 
+                     <img src="images/son.png" class="img-fluid rounded-0 carousel-item " >
+                     <img src="images/son5.jpg" class="img-fluid rounded-0 carousel-item " >
+                  </div>
+                  <ol class="carousel-indicators list-inline" style="margin-bottom: 80px;">
+                    <li class="list-inline-item active"> <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel"> <img src="images/son1.png" class="img-fluid rounded"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-2" data-slide-to="2" data-target="#myCarousel"> <img src="images/son.png" class="img-fluid rounded"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-1" data-slide-to="1" data-target="#myCarousel"> <img src="images/son5.jpg" class="img-fluid rounded"> </a> </li>
+                  </ol>
+            </div>
+            
             </div>
            
             <div class="col-md-5 ml-auto product-title-wrap">
-              <h3 class="text-black mb-4 font-weight-bold">About This Product</h3>
+              <h3 class="text-black mb-4 font-weight-bold" style="text-align: center;">About This Product</h3>
               <p class="mb-4">Et tempora id nostrum saepe amet doloribus deserunt totam officiis cupiditate asperiores quasi accusantium voluptatum dolorem quae sapiente voluptatem ratione odio iure blanditiis earum fuga molestiae alias dicta perferendis inventore!</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
-              
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
+
               <div class="mb-4"> 
-                <h3 class="text-black font-weight-bold h5">Price:</h3>
+                <h3 class="text-black font-weight-bold h5" style="font-size: 16px;">Price:</h3>
                 <div class="price">VND <del class="mr-2">1,100,000</del> 699,000</div>
               </div>
               <p>
@@ -467,45 +549,75 @@
       </div>
    <div class="items" style="margin-top: 0px;">
     <div class="card">
-        <div class="media media-2x1 gd-primary"> <img class="profile-image" src="https://www.liveabout.com/thmb/coR7c2wKPufb0DihslDYzEl9ANs=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/cartoon-2319837_1920____-7e60611016f2417a9c38b5b1cf27fd18.jpg"> </div>
+        <div class="media media-2x1 gd-primary"> <img class="profile-image" src="https://scontent.ftpa1-1.fna.fbcdn.net/v/t1.15752-9/94977615_230953458135543_4343591149038993408_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=wMt4TyV1uVYAX-Vv60L&_nc_ht=scontent.ftpa1-1.fna&oh=2a8bfccd331c8693e4e0e8eaf6ce9a9c&oe=5ED09A5C"> </div>
         <div class="card-body">
-            <h5 class="card-title">Tikoh Amin</h5>
-            <h3 style="font-size: 16px;text-align: center;color:rgba(0, 0, 0, 0.7) ;margin-top: -8px;">( Assistant )</h3>
-            <p class="card-text">"When you think of Apple you automatically think expensive if your anything like me. When purchasing this laptop I was skeptical."</p>
+            <h5 class="card-title">Nguyen Thu Hang</h5>
+            <h3 style="font-size: 16px;text-align: center;color:rgba(0, 0, 0, 0.7) ;margin-top: -8px;">Creative Director</h3>
+            <p class="card-text">“Live as if you were to die tomorrow. Learn as if you were to live forever.”
+
+              – Mahatma Gandhi</p>
         </div>
     </div>
     <div class="card">
-        <div class="media media-2x1 gd-primary"> <img class="profile-image" src="https://cdn.vox-cdn.com/thumbor/TiwabydzgLgAVBjjJvAO_dnKo_o=/0x16:1103x751/1200x800/filters:focal(0x16:1103x751)/cdn.vox-cdn.com/uploads/chorus_image/image/46840054/Screenshot_2015-07-27_15.11.13.0.0.png"> </div>
+        <div class="media media-2x1 gd-primary"> <img class="profile-image" src="https://scontent.ftpa1-1.fna.fbcdn.net/v/t1.15752-9/94930186_538561497066743_2650284349672390656_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=8nAwTLIWl4oAX9jGXhu&_nc_ht=scontent.ftpa1-1.fna&oh=2b5c3b8378a441f86a09860b63f0da79&oe=5ED2FA2F"> </div>
         <div class="card-body">
-            <h5 class="card-title">Malachi Lensing</h5>
-            <h3 style="font-size: 16px;text-align: center;color:rgba(0, 0, 0, 0.7) ;margin-top: -8px;">( Assistant )</h3>
-            <p class="card-text">"I’ve wanted a MacBook for a while now because of the build quality and the simplicity of the OS. I spend an average 6 hours a day."</p>
+            <h5 class="card-title">Vu Dang Mai Thao</h5>
+            <h3 style="font-size: 16px;text-align: center;color:rgba(0, 0, 0, 0.7) ;margin-top: -8px;">Marketing Manager</h3>
+            <p class="card-text">“That which does not kill us makes us stronger.”
+
+              – Friedrich Nietzsche</p>
         </div>
     </div>
     <div class="card">
-      <div class="media media-2x1 gd-primary"> <img class="profile-image" src="https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr06/2013/6/19/12/enhanced-buzz-orig-14431-1371659472-9.jpg?downsize=700%3A%2A&output-quality=auto&output-format=auto&output-quality=auto&output-format=auto&downsize=360:*"> </div>
+      <div class="media media-2x1 gd-primary"> <img class="profile-image" src="https://scontent.ftpa1-2.fna.fbcdn.net/v/t1.15752-9/95500303_266711087832298_7990797490410487808_n.jpg?_nc_cat=106&_nc_sid=b96e70&_nc_ohc=g2Tw8qU06iUAX8kzJme&_nc_ht=scontent.ftpa1-2.fna&oh=f53606bc2ad79b81f765faf116db4768&oe=5ED39916"> </div>
       <div class="card-body">
-          <h5 class="card-title">Ngan Dang</h5>
-          <h3 style="font-size: 16px;text-align: center;color:rgba(0, 0, 0, 0.7) ;margin-top: -8px;">( Assistant )</h3>
-          <p class="card-text">"Online reviews can make or break a customer's decision to make a purchase. Read about these customer review on site"</p>
+          <h5 class="card-title">Mai Thi Huong Lan</h5>
+          <h3 style="font-size: 16px;text-align: center;color:rgba(0, 0, 0, 0.7) ;margin-top: -8px;">Beauty Expert</h3>
+          <p class="card-text">“We must not allow other people’s limited perceptions to define us.”
+
+            – Virginia Satir</p>
       </div>
   </div>
     <div class="card">
         <div class="media media-2x1 gd-primary"> <img class="profile-image" src="https://cdn.deguisetoi.fr/images/rep_art/moy/313/5/313550/feuille-en-azyme-mickey--18-4-x-25-7-cm_313550.jpg"> </div>
         <div class="card-body">
-            <h5 class="card-title">Christian Isla</h5>
-            <h3 style="font-size: 16px;text-align: center;color:rgba(0, 0, 0, 0.7) ;margin-top: -8px;">( Assistant )</h3>
-            <p class="card-text">"This MacBook has excellent processing speed. The screen is crystal clear and I really enjoy the touchbar. I set it up"</p>
+            <h5 class="card-title">Luu Thi Dieu Huong</h5>
+            <h3 style="font-size: 16px;text-align: center;color:rgba(0, 0, 0, 0.7) ;margin-top: -8px;">Research & Development</h3>
+            <p class="card-text"> “Do what you can, with what you have, where you are.”
+
+              – Theodore Roosevelt</p>
         </div>
     </div>
     <div class="card">
-        <div class="media media-2x1 gd-primary"> <img class="profile-image" src="https://i.cbc.ca/1.2067919.1381992169!/httpImage/image.jpg_gen/derivatives/original_780/dora-the-explorer220x340.jpg"> </div>
+        <div class="media media-2x1 gd-primary"> <img class="profile-image" src="https://scontent.ftpa1-1.fna.fbcdn.net/v/t1.0-9/13626472_499894273550006_2269876737060561097_n.jpg?_nc_cat=110&_nc_sid=85a577&_nc_ohc=5wKNu0lq1N8AX8LLAI-&_nc_ht=scontent.ftpa1-1.fna&oh=6e430bad556979a501143be5c6258848&oe=5ED3FF2F"> </div>
         <div class="card-body">
-            <h5 class="card-title">Lori Charles</h5>
-            <h3 style="font-size: 16px;text-align: center;color:rgba(0, 0, 0, 0.7) ;margin-top: -8px;">( Assistant )</h3>
-            <p class="card-text">"For the last 10 years, I have owned an old Gateway laptop. Although it was amazing and lasted me, it was time for an upgrade."</p>
+            <h5 class="card-title">Dang Thi Anh Ngan</h5>
+            <h3 style="font-size: 16px;text-align: center;color:rgba(0, 0, 0, 0.7) ;margin-top: -8px;">Product Design Manager</h3>
+            <p class="card-text">“Be yourself; everyone else is already taken.”
+
+              – Oscar Wilde</p>
         </div>
     </div>
+    <div class="card">
+      <div class="media media-2x1 gd-primary"> <img class="profile-image" src="https://scontent.ftpa1-1.fna.fbcdn.net/v/t1.15752-9/95100665_829899607418420_1420166086434750464_n.jpg?_nc_cat=101&_nc_sid=b96e70&_nc_ohc=92hcxFTg1HIAX8BpBoq&_nc_ht=scontent.ftpa1-1.fna&oh=ccbec094e6f1b713484725fde31c97da&oe=5ED2A447"> </div>
+      <div class="card-body">
+          <h5 class="card-title">Nguyen Thi Diem</h5>
+          <h3 style="font-size: 16px;text-align: center;color:rgba(0, 0, 0, 0.7) ;margin-top: -8px;">Assistant</h3>
+          <p class="card-text"> “If you cannot do great things, do small things in a great way.”
+
+            – Napoleon Hill</p>
+      </div>
+  </div>
+  <div class="card">
+    <div class="media media-2x1 gd-primary"> <img class="profile-image" src="https://scontent.ftpa1-2.fna.fbcdn.net/v/t1.15752-9/95095453_573638096602786_3428471516776366080_n.jpg?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=ZIZc9niWOsUAX-o3h0t&_nc_ht=scontent.ftpa1-2.fna&oh=362f433f698eb9d660198d3f08b5d9e1&oe=5ED0AE51"> </div>
+    <div class="card-body">
+        <h5 class="card-title">Le Thi Ngoc Huyen</h5>
+        <h3 style="font-size: 16px;text-align: center;color:rgba(0, 0, 0, 0.7) ;margin-top: -8px;">Secretary</h3>
+        <p class="card-text">“Do not let what you cannot do interfere with what you can do.”
+
+          – John Wooden</p>
+    </div>
+</div>
 </div>
 </div>
   <!---->
@@ -636,5 +748,24 @@ slidesToScroll: 1
 });
 });
     </script>
+    <script>
+      // Get the video
+      var video = document.getElementById("myVideo");
+      
+      // Get the button
+      var btn = document.getElementById("myBtn");
+      
+      // Pause and play the video, and change the button text
+      function myFunction() {
+        if (video.paused) {
+          video.play();
+          btn.innerHTML = "Pause";
+        } else {
+          video.pause();
+          btn.innerHTML = "Play";
+        }
+      }
+      </script>
+      
   </body>
 </html>
