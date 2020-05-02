@@ -373,7 +373,6 @@
    </style>
   </head>
   <body>
-    
   <div class="site-wrap">
     
     <div class="site-navbar bg-white py-2" id="myHeader">
@@ -520,19 +519,39 @@
             </div>
            
             <div class="col-md-5 ml-auto product-title-wrap">
-              <h3 class="text-black mb-4 font-weight-bold" style="text-align: center;">About This Product</h3>
-              <p class="mb-4">Et tempora id nostrum saepe amet doloribus deserunt totam officiis cupiditate asperiores quasi accusantium voluptatum dolorem quae sapiente voluptatem ratione odio iure blanditiis earum fuga molestiae alias dicta perferendis inventore!</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
+              <div id="introduction">
+                <h3 class="text-black mb-4 font-weight-bold" style="text-align: center;">Product Introduction</h3>
+                <p class="mb-4">Et tempora id nostrum saepe amet doloribus deserunt totam officiis cupiditate asperiores quasi accusantium voluptatum dolorem quae sapiente voluptatem ratione odio iure blanditiis earum fuga molestiae alias dicta perferendis inventore!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
+              </div>
+              <div id="benefit" style="display: none;">
+                <h3 class="text-black mb-4 font-weight-bold" style="text-align: center;">Product Information</h3>
+                <p class="mb-4" style="font-size: 16px;"><span style="font-size: 18px;color: black;font-weight: 700;">Product Description: </span>
+                  Lèvres has brought luxury cosmetics with the new Limited Edition Bow Lipstick Case. This is an iconic symbol of fashion, power and elegance. This quintessential feminine accessory embodies many personalities – sweet, sexy and sophisticated.Finished in silver-plated and encrusted with over 300 brilliant diamond – the epitome of innovation and opulence. Exclusive beautiful butterfly design inspired by the beauty of woman. Luxurious design evokes classic, glamorous beauty and exhilarating energy.
+                  </p>
+                  <p style="font-size: 16px;"><span style="font-size: 18px;color: black;font-weight: 700;">Benefits: </span>
+                    Lèvres is perfectly designed for stressful days that really need a little extra recovery - so you feel best in the morning. The special ingredient is CBD oil. CBD essential oil is an essential oil extracted from the cannabis plant. Cannabidiol contains marijuana - one of the 100 different compounds found in plants to help improve sleep, quick, effective insomnia treatment. Moreover, CBD essential oil helps regulate the level of Serotonin release - a natural mood regulator in the body.                    </p>               
+                  <p style="font-size: 16px;">  Lèvres has the effect of maintaining the softness of the lips for a certain time. The product also treats and improves lip aging such as wrinkles, dark circles, dark spots, ... Especially, after using Lèvres, you will see the lip lines are more clearly shaped.</p>
+                  </div>
+                  <div id="using" style="display: none;">
+                    <h3 class="text-black mb-4 font-weight-bold" style="text-align: center;">How to use Lèvres lip balm</h3>
+                    <p class="mb-4" style="font-size: 16px;">- Apply  a thin layer of lip balm on your lips at night before going to bed for about 15 minutes and leave it on your lips until you wake up.<br>
+                      - Only use 1 time/day.<br>
+                      - Preserving in a dry place, avoid high temperatures, sunshine
+                      </p>
+                  </div>
+              <div style="margin-top: 20px;">
+                <button class="btn btn-black btn-outline-black rounded-0 d-block mb-2 mb-lg-0 d-lg-inline-block" id="btn1" style="background-color: black; margin-right: 10px;color: white;">Ingreditent</button>
+                <button class="btn btn-black btn-outline-black rounded-0 d-block mb-2 mb-lg-0 d-lg-inline-block" id="btn2" style="margin-right: 10px;">Details</button>
+                <button class="btn btn-black btn-outline-black rounded-0 d-block mb-2 mb-lg-0 d-lg-inline-block" id="btn3">Using</button>
 
-              <div class="mb-4"> 
+              </div>
+              <!-- <div class="mb-4"> 
                 <h3 class="text-black font-weight-bold h5" style="font-size: 16px;">Price:</h3>
                 <div class="price">VND <del class="mr-2">1,100,000</del> 699,000</div>
-              </div>
-              <p>
-                <a href="#" class="btn btn-black btn-outline-black rounded-0 d-block mb-2 mb-lg-0 d-lg-inline-block">View Details</a>
-                <a href="#" class="btn btn-black rounded-0 d-block d-lg-inline-block">Add To Cart</a>
-              </p>
+              </div> -->
+              
             </div>
           </div>
         </div>
@@ -754,7 +773,48 @@ slidesToScroll: 1
       
       // Get the button
       var btn = document.getElementById("myBtn");
-      
+      var btn1 = document.getElementById("btn1");
+      var btn2 = document.getElementById("btn2");
+      var btn3 = document.getElementById("btn3");
+
+      var doc1 = document.getElementById("introduction");
+      var doc2 = document.getElementById("benefit");
+      var doc3 = document.getElementById("using");
+
+      btn1.addEventListener("click", function(){
+          doc1.style.display= "block";
+          doc2.style.display= "none";
+          doc3.style.display= "none";
+          btn2.style.background= "white";
+          btn3.style.background= "white";
+          btn1.style.background= "black";
+          btn2.style.color= "black";
+          btn3.style.color= "black";
+          btn1.style.color= "white";
+
+         });
+         btn2.addEventListener("click", function(){
+          doc1.style.display= "none";
+          doc2.style.display= "block";
+          doc3.style.display= "none"
+          btn2.style.background= "black";
+          btn3.style.background= "white";
+          btn1.style.background= "white";
+          btn2.style.color= "white";
+          btn3.style.color= "black";
+          btn1.style.color= "black";
+         });
+         btn3.addEventListener("click", function(){
+          doc1.style.display= "none";
+          doc3.style.display= "block"
+          doc2.style.display= "none"
+          btn2.style.background= "white";
+          btn3.style.background= "black";
+          btn1.style.background= "white";
+          btn2.style.color= "black";
+          btn3.style.color= "white";
+          btn1.style.color= "black";
+         });
       // Pause and play the video, and change the button text
       function myFunction() {
         if (video.paused) {
