@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/aos.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
       #myHeader {
@@ -370,9 +370,34 @@
   outline: none;
   border:none;
 }
+/**/
+.list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap; }
+  @media only screen and (max-width: 21.85em) {
+    .list {
+      font-size: 1.2rem; } }
+  .list__item {
+    flex: 0 0 50%;
+    margin-bottom: .7rem; }
+      @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+        .list__item::before {
+          background-color: var(pink);
+          -webkit-mask-image: url(/images/arrow.svg);
+          -webkit-mask-size: cover;
+          mask-image: url(/images/arrow.svg);
+          mask-size: cover;
+          background-image: none; } }
+    @media only screen and (max-width: 25.625em) {
+      .list__item {
+        font-size: .8rem; } }
+
    </style>
   </head>
   <body>
+    <embed src="images/sunshine.mp4" hidden="true" loop="false" >
   <div class="site-wrap">
     
     <div class="site-navbar bg-white py-2" id="myHeader">
@@ -399,10 +424,10 @@
                 <li class=" active">
                   <a href="#">Home</a>
                 </li>
-                <li><a href="shop.html">Shop</a></li>
+                <li><a href="#">Shop</a></li>
                 <li><a href="#">Catalogue</a></li>
                 <li><a href="#">New Arrivals</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Contact</a></li>
               </ul>
             </nav>
           </div>
@@ -464,8 +489,8 @@
                 </div>
                 <p class="mb-4">Best selling lip balm in the country</p>
                 <div>
-                  <a href="#" class="btn btn-black mr-1 rounded-0">Order now</a>
-                  <a href="#" class="btn btn-black btn-outline-black ml-1 rounded-0">View</a>
+                  <a href="cart.html" class="btn btn-black mr-1 rounded-0">Order now</a>
+                  <a href="#feature" class="btn btn-black btn-outline-black ml-1 rounded-0">View Details</a>
                 </div>
               </div>
             </div>
@@ -485,31 +510,29 @@
               <input type="text" class="form-control rounded-0" placeholder="Enter your email address">
               <input type="submit" class="btn btn-white btn-outline-white rounded-0" value="Subscribe" style="border-left: none;">
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat commodi veniam doloremque ducimus tempora.</p>
+            <p>We will send you the newest Lip Balm. Please check your email !</p>
           </form>
         </div>
 
       </div>
     </div>
     <!---->
-    <div class="site-section bg-light">
+    <div class="site-section bg-light" id="feature">
       <div class="container">
-        <div class="row mb-5 justify-content-center" >
-          <div class="col-md-6 text-center">
-            <h3 class="section-sub-title">Awesome Products</h3>
-            <h2 class="section-title mb-3">Featured Products</h2>
-          </div>
+        <div style="margin-bottom: 10px!important;" >
+            <h3 class="section-sub-title" style="text-align: center;">Featured Products</h3>
+            <h2 class="section-title mb-3" style="text-align: center; color: rgba(240, 115, 236,.8)">Lèvres Lip Balm</h2>
         </div>
         <div class="bg-white py-4 mb-4">
-          <div class="row mx-4 my-4 product-item-2 align-items-start">
-            <div class="col-md-5 ml-auto mb-md-0">
+          <div class="row mx-5 my-5 product-item-2 align-items-start">
+            <div class="col-md-5 ml-auto mb-md-0" style="margin-left: 20px!important;padding: 0px!important; ">
               <div id="myCarousel" class="carousel slide" data-ride="carousel" align="center" style="width: 100%;padding: 0px;">
                 <div class="carousel-inner" >
                      <img src="images/son1.png" class="img-fluid rounded-0 carousel-item active" > 
                      <img src="images/son.png" class="img-fluid rounded-0 carousel-item " >
                      <img src="images/son5.jpg" class="img-fluid rounded-0 carousel-item " >
                   </div>
-                  <ol class="carousel-indicators list-inline" style="margin-bottom: 80px;">
+                  <ol class="carousel-indicators list-inline" style="margin-bottom: 110px;">
                     <li class="list-inline-item active"> <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel"> <img src="images/son1.png" class="img-fluid rounded"> </a> </li>
                     <li class="list-inline-item"> <a id="carousel-selector-2" data-slide-to="2" data-target="#myCarousel"> <img src="images/son.png" class="img-fluid rounded"> </a> </li>
                     <li class="list-inline-item"> <a id="carousel-selector-1" data-slide-to="1" data-target="#myCarousel"> <img src="images/son5.jpg" class="img-fluid rounded"> </a> </li>
@@ -518,34 +541,45 @@
             
             </div>
            
-            <div class="col-md-5 ml-auto product-title-wrap">
-              <div id="introduction">
-                <h3 class="text-black mb-4 font-weight-bold" style="text-align: center;">Product Introduction</h3>
-                <p class="mb-4">Et tempora id nostrum saepe amet doloribus deserunt totam officiis cupiditate asperiores quasi accusantium voluptatum dolorem quae sapiente voluptatem ratione odio iure blanditiis earum fuga molestiae alias dicta perferendis inventore!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
-              </div>
-              <div id="benefit" style="display: none;">
-                <h3 class="text-black mb-4 font-weight-bold" style="text-align: center;">Product Information</h3>
-                <p class="mb-4" style="font-size: 16px;"><span style="font-size: 18px;color: black;font-weight: 700;">Product Description: </span>
-                  Lèvres has brought luxury cosmetics with the new Limited Edition Bow Lipstick Case. This is an iconic symbol of fashion, power and elegance. This quintessential feminine accessory embodies many personalities – sweet, sexy and sophisticated.Finished in silver-plated and encrusted with over 300 brilliant diamond – the epitome of innovation and opulence. Exclusive beautiful butterfly design inspired by the beauty of woman. Luxurious design evokes classic, glamorous beauty and exhilarating energy.
+            <div class="col-md-5 ml-auto product-title-wrap" style="margin-right: 35px!important;padding: 0px!important;box-sizing: border-box!important;">
+              <div id="introduction" style="font-family: 'Montserrat', sans-serif;color: black;">
+                <p class="mb-4" style="font-size: 17px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family: 'Dancing Script';font-size: 25px;font-weight: 700;">I</span>f feels good to leave a light lip balm on overnight, so you can wake up feeling refreshed, rejuvenated and ready to start the day. We are proud to present our new improved product. It's perfectly designed for stressful days that really need a little extra recovery - so you feel best in the morning.<br> 
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family: 'Dancing Script';font-size: 25px;font-weight: 700;">W</span>e think a night lipgloss is about a balance of calming, restoring ingredients on your body. And its scent will never let you down.
                   </p>
-                  <p style="font-size: 16px;"><span style="font-size: 18px;color: black;font-weight: 700;">Benefits: </span>
-                    Lèvres is perfectly designed for stressful days that really need a little extra recovery - so you feel best in the morning. The special ingredient is CBD oil. CBD essential oil is an essential oil extracted from the cannabis plant. Cannabidiol contains marijuana - one of the 100 different compounds found in plants to help improve sleep, quick, effective insomnia treatment. Moreover, CBD essential oil helps regulate the level of Serotonin release - a natural mood regulator in the body.                    </p>               
-                  <p style="font-size: 16px;">  Lèvres has the effect of maintaining the softness of the lips for a certain time. The product also treats and improves lip aging such as wrinkles, dark circles, dark spots, ... Especially, after using Lèvres, you will see the lip lines are more clearly shaped.</p>
+                  <h3 style="font-family: 'Dancing Script';font-size: 25px;font-weight: 700;">Ingredients:</h3>
+                  <ul class="list">
+                    <li class="list__item">- Sunflower oil</li>
+                    <li class="list__item">- Jojoba oil</li>
+                    <li class="list__item">- Shea butter</li>
+                    <li class="list__item">- Beeswax</li>
+                    <li class="list__item">- Coconut oil</li>
+                    <li class="list__item">- Evening primrose oil</li>
+                    <li class="list__item">- Tocopherol</li>
+                    <li class="list__item">- Lavender oil</li>
+                    <li class="list__item">- Wild orange oil</li>
+                    <li class="list__item">- Roman chamomile oil</li>
+                    <li class="list__item">- CBD hemp oil (150mg)</li>
+                </ul>
+                <h3 style="font-family: 'Dancing Script';font-size: 25px;font-weight: 700;">How to use:</h3>
+                
+                <h3 style="font-size: 17px;line-height: 25px;">- Apply  a thin layer of lip balm on your lips at night before going to bed for about 15 minutes and leave it on your lips until you wake up.</h3> 
+                <h3 style="font-size: 17px; line-height: 25px;">- Only use 1 time/day.</h3>
+                <h3 style="font-size: 17px; line-height: 25px;">- Preserving in a dry place, avoid high temperatures, sunshine.</h3>
+                
+              </div>
+              <div id="benefit" style="font-family: 'Montserrat', sans-serif;color: black;display: none;">
+                <h3 style="font-family: 'Dancing Script';font-size: 25px;font-weight: 700;">Product Description</h3>
+                <p style="font-size: 17px; line-height: 25px;">
+                  &nbsp;&nbsp;&nbsp;&nbsp;Lèvres has brought luxury cosmetics with the new Limited Edition Bow Lipstick Case. This is an iconic symbol of fashion, power and elegance. This quintessential feminine accessory embodies many personalities – sweet, sexy and sophisticated.Finished in silver-plated and encrusted with over 300 brilliant diamond – the epitome of innovation and opulence. Exclusive beautiful butterfly design inspired by the beauty of woman. Luxurious design evokes classic, glamorous beauty and exhilarating energy.
+                  </p>
+                  <h3 style="font-family: 'Dancing Script';font-size: 25px;font-weight: 700;">Benefits</h3>
+                  <p style="font-size: 17px;line-height: 25px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;Lèvres is perfectly designed for stressful days that really need a little extra recovery - so you feel best in the morning. The special ingredient is CBD oil. CBD essential oil is an essential oil extracted from the cannabis plant. Cannabidiol contains marijuana - one of the 100 different compounds found in plants to help improve sleep, quick, effective insomnia treatment. Moreover, CBD essential oil helps regulate the level of Serotonin release - a natural mood regulator in the body.<br>              
+                    &nbsp;&nbsp;&nbsp;&nbsp;Lèvres has the effect of maintaining the softness of the lips for a certain time. The product also treats and improves lip aging such as wrinkles, dark circles, dark spots, ... Especially, after using Lèvres, you will see the lip lines are more clearly shaped.</p>
                   </div>
-                  <div id="using" style="display: none;">
-                    <h3 class="text-black mb-4 font-weight-bold" style="text-align: center;">How to use Lèvres lip balm</h3>
-                    <p class="mb-4" style="font-size: 16px;">- Apply  a thin layer of lip balm on your lips at night before going to bed for about 15 minutes and leave it on your lips until you wake up.<br>
-                      - Only use 1 time/day.<br>
-                      - Preserving in a dry place, avoid high temperatures, sunshine
-                      </p>
-                  </div>
-              <div style="margin-top: 20px;">
-                <button class="btn btn-black btn-outline-black rounded-0 d-block mb-2 mb-lg-0 d-lg-inline-block" id="btn1" style="background-color: black; margin-right: 10px;color: white;">Ingreditent</button>
-                <button class="btn btn-black btn-outline-black rounded-0 d-block mb-2 mb-lg-0 d-lg-inline-block" id="btn2" style="margin-right: 10px;">Details</button>
-                <button class="btn btn-black btn-outline-black rounded-0 d-block mb-2 mb-lg-0 d-lg-inline-block" id="btn3">Using</button>
-
+              <div style="margin-top: 30px;">
+                <button class="btn btn-black btn-outline-black rounded-0 d-block mb-2 mb-lg-0 d-lg-inline-block" id="btn1" style="background-color: black; margin-right: 10px;color: white;width: 180px!important;margin-bottom: 10px;">Introduction</button>
+                <button class="btn btn-black btn-outline-black rounded-0 d-block mb-2 mb-lg-0 d-lg-inline-block" id="btn2" style="margin-right: 10px;width: 180px!important;">Details</button>
               </div>
               <!-- <div class="mb-4"> 
                 <h3 class="text-black font-weight-bold h5" style="font-size: 16px;">Price:</h3>
@@ -685,9 +719,9 @@
             <div class="block-5 mb-5">
               <h3 class="footer-heading mb-4">Contact Info</h3>
               <ul class="list-unstyled">
-                <li class="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
-                <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
-                <li class="email">emailaddress@domain.com</li>
+                <li class="address">41 Lê Duẩn, phường Hải Châu 1, quận Hải Châu, thành phố Đà Nẵng.</li>
+                <li class="phone"><a href="#">0236.3699324</a></li>
+                <li class="email">ngandang@gmail.com</li>
               </ul>
             </div>
 
@@ -775,44 +809,33 @@ slidesToScroll: 1
       var btn = document.getElementById("myBtn");
       var btn1 = document.getElementById("btn1");
       var btn2 = document.getElementById("btn2");
-      var btn3 = document.getElementById("btn3");
 
       var doc1 = document.getElementById("introduction");
       var doc2 = document.getElementById("benefit");
-      var doc3 = document.getElementById("using");
 
       btn1.addEventListener("click", function(){
           doc1.style.display= "block";
           doc2.style.display= "none";
-          doc3.style.display= "none";
           btn2.style.background= "white";
-          btn3.style.background= "white";
           btn1.style.background= "black";
           btn2.style.color= "black";
-          btn3.style.color= "black";
           btn1.style.color= "white";
 
          });
          btn2.addEventListener("click", function(){
           doc1.style.display= "none";
           doc2.style.display= "block";
-          doc3.style.display= "none"
           btn2.style.background= "black";
-          btn3.style.background= "white";
           btn1.style.background= "white";
           btn2.style.color= "white";
-          btn3.style.color= "black";
           btn1.style.color= "black";
          });
          btn3.addEventListener("click", function(){
           doc1.style.display= "none";
-          doc3.style.display= "block"
           doc2.style.display= "none"
           btn2.style.background= "white";
-          btn3.style.background= "black";
           btn1.style.background= "white";
           btn2.style.color= "black";
-          btn3.style.color= "white";
           btn1.style.color= "black";
          });
       // Pause and play the video, and change the button text
